@@ -68,6 +68,7 @@ public class ModuleOptionsPropertySourceInitializer implements
 
 	@Override
 	public void initialize(ConfigurableApplicationContext applicationContext) {
+		System.setProperty("spring.bus.enabled", "true");
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		ModuleOptionsMetadataResolver resolver = moduleOptionsMetadataResolver(environment);
 		ModuleOptionsMetadata resolved = resolver.resolve(getModuleDefinition(applicationContext));
